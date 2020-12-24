@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  function save() {
+    var bestWord = document.getElementById("best-word").value
+    alert("saved '" + bestWord + "' as new best word!")
+    window.localStorage.setItem("bestWord", bestWord)
+  }
+
+  function loaded() {
+    document.getElementById("best-word").value = window.localStorage.getItem("bestWord")
+  }
+  </script>
+</head>
+<body onload="loaded()" style="font-family: 'HelveticaNeue'">
+<center>
+<h1 style="margin-top: 20%">The best word is:</h1>
+<input id="best-word" style="font-size: 36px; padding: 10px; border-radius: 15px; outline: none; border: 1px solid #f0f0f0; text-align: center; display: block;" value='word'/>
+<button id="save-button" style="border: 2px solid green; border-radius: 15px; background: green; color: white; padding: 10px; font-size: 32px; margin-top: 10px; outline: none;" onclick="save()">Save</button>
+</center>
+</body>
+</html>
